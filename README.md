@@ -2,8 +2,8 @@
 
 Bananium-style validation hooks for [Eijebong/Archipelago-fuzzer](https://github.com/Eijebong/Archipelago-fuzzer).
 Used as the fuzz gate for [dowlle/Archipelago-index](https://github.com/dowlle/Archipelago-index)
-under the [Archipelago Pie](https://ap-pie.com) umbrella, and locally on the Atlas
-host via `~/apworld-fuzzer/run-fuzz.sh`.
+under the [Archipelago Pie](https://ap-pie.com) umbrella, and on a separate
+worker host for local runs.
 
 ## What's here
 
@@ -35,13 +35,12 @@ copy `empty.apworld` into `<AP_DIR>/worlds/` before running. They then invoke
 
 - **GHA workflow** on `dowlle/Archipelago-index` (`.github/workflows/fuzz.yml`):
   one matrix job per check, parallel, free tier.
-- **Atlas script** at `~/apworld-fuzzer/run-fuzz.sh`: sequential locally.
+- **Worker-host script** for local sequential runs.
 
 ## Provenance
 
-Hooks were mirrored from `D:\pythonProjects\ArchipelagoPokepelago\hooks/` which
-in turn came from the Bananium team's fuzz collection. Two hooks
-(`no_rs.py`, `with_empty.py`) had hardcoded `/ap/...` paths inherited from the
+Hooks adapted from the Bananium team's fuzz collection. Two hooks
+(`no_rs.py`, `with_empty.py`) had hardcoded paths inherited from the
 original `ap-yaml-checker` container layout; both were refactored to assume
 `empty.apworld` is pre-placed by the caller, so the hooks are portable.
 

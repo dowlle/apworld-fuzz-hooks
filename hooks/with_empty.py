@@ -16,9 +16,8 @@ class Hook(BaseHook):
     catching cross-world interaction bugs (the UT-style check).
 
     Requires the `Empty` apworld (https://github.com/Eijebong/empty-apworld)
-    to already be registered. Both fuzz environments (Atlas's run-fuzz.sh and
-    the GHA workflow on dowlle/Archipelago-index) pre-place `empty.apworld`
-    in the AP install's `worlds/` folder before invoking fuzz.py.
+    to already be registered. Callers pre-place `empty.apworld` in the AP
+    install's `worlds/` folder before invoking fuzz.py.
     """
 
     def setup_main(self, args):

@@ -9,10 +9,9 @@ class Hook(BaseHook):
     even when an apworld would otherwise restrictive-start out of the room.
 
     Requires the `Empty` apworld (https://github.com/Eijebong/empty-apworld)
-    to already be registered with AutoWorldRegister. Both fuzz environments
-    (Atlas's run-fuzz.sh and the GHA workflow on dowlle/Archipelago-index)
-    pre-place `empty.apworld` in the AP install's `worlds/` folder before
-    invoking fuzz.py, so AutoWorldRegister picks it up at import time.
+    to already be registered with AutoWorldRegister. Callers pre-place
+    `empty.apworld` in the AP install's `worlds/` folder before invoking
+    fuzz.py, so AutoWorldRegister picks it up at import time.
     """
 
     def setup_main(self, args):

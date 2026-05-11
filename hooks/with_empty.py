@@ -17,7 +17,7 @@ class Hook(BaseHook):
 
     Requires the `Empty` apworld (https://github.com/Eijebong/empty-apworld)
     to already be registered. Callers pre-place `empty.apworld` in the AP
-    install's `worlds/` folder before invoking fuzz.py.
+    install's `custom_worlds/` folder before invoking fuzz.py.
     """
 
     def setup_main(self, args):
@@ -35,7 +35,7 @@ Empty: {}
         if 'Empty' not in AutoWorldRegister.world_types:
             raise RuntimeError(
                 "The `empty` apworld needs to be present in the AP install's "
-                "worlds/ folder before fuzz.py starts. Get it from "
+                "custom_worlds/ folder before fuzz.py starts. Get it from "
                 "https://github.com/Eijebong/empty-apworld."
             )
         refresh_netdata_package()

@@ -30,7 +30,7 @@ install's `worlds/` folder before invoking `fuzz.py`.
 ## How callers use this
 
 Both fuzz environments check this repo out, copy `hooks/` next to `fuzz.py`, and
-copy `empty.apworld` into `<AP_DIR>/worlds/` before running. They then invoke
+copy `empty.apworld` into `<AP_DIR>/custom_worlds/` before running. They then invoke
 `fuzz.py --hook hooks.<name>:Hook ...` once per check.
 
 - **GHA workflow** on `dowlle/Archipelago-index` (`.github/workflows/fuzz.yml`):
